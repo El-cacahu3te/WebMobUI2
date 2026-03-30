@@ -1,17 +1,20 @@
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, onBeforeUnmount, onMounted, shallowRef } from 'vue';
 
 function normalizeHash(hash) {
    return hash.startsWith('#') ? hash : `#${hash}`;
 }
+// route doit avoir une propriété hash et component
 
 export function useHashRoute(routes) {
-   const defaultRoute = ref(routes[0]);
-   const currentRoute = ref(defaultRoute);
+   const defaultRoute = routes[0];
+   const currentRoute = shallowRef(defaultRoute);
+   
 
    function getRouteByHash(hash) {
       const normalizedHash = normalizeHash(hash || defaultRoute.hash);
       return routes.find((route) => route.hash === normalizedHash) || defaultRoute;
-   }
+   } //on cherche la route correspondant au hash, si aucune route ne correspond on retourne la route par défaut
+   
 
    function syncRouteFromUrl() {
       currentRoute.value = getRouteByHash(window.location.hash);
@@ -28,7 +31,7 @@ export function useHashRoute(routes) {
       }
 
       window.history.pushState(null, '', url);
-
+      //rajouter à l'historique du navigateur
       syncRouteFromUrl();
    }
 
@@ -41,6 +44,7 @@ export function useHashRoute(routes) {
 
       window.addEventListener('hashchange', syncRouteFromUrl);
       window.addEventListener('popstate', syncRouteFromUrl);
+      //écoute les changement de hash ou url après enter
    });
 
    onBeforeUnmount(() => {

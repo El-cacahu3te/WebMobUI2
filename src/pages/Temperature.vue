@@ -4,18 +4,18 @@ import { computed, ref } from 'vue';
 const temp = ref(0);
 const kelvin = computed({
   get :  () => parseFloat((temp.value).toFixed(2)),
-  set : parseFloat((val) => temp.value= val), 
+  set : (val) => temp.value=  parseFloat(val), 
   
 }); 
 const celcuis = computed({
   get :  () => parseFloat((temp.value -273.15).toFixed(2)),
-  set : (val) => parseFloat(temp.value= val+273.15), 
+  set : (val) => temp.value= parseFloat(val)+273.15, 
   
 });  
 const farenheit = computed({
   get :  () => parseFloat(((temp.value*(9/5))-459.67).toFixed(2)),
   //transforme en chiffre puis string puis chiffre pour arrondir à 2 chiffres après la virgule
-  set : (val) => parseFloat(temp.value = (5/9)*(val + 459.67)), 
+  set : (val) =>temp.value = (5/9)*( parseFloat(val) + 459.67), 
   
 });
 

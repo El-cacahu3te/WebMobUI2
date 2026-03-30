@@ -1,17 +1,21 @@
 <script setup>
 import Home from './pages/Home.vue'
 import Temperature from './pages/Temperature.vue'
+import Messures from './pages/Messures.vue'
+import Schedule from './pages/Schedule.vue'
+import { useHashRoute } from './composables/useHashRoute.js' 
+import { useJsonStorage } from './composables/useJsonStorage.js' 
 
-import { useHashRoute } from './composables/useHashRoute.js'  
-
-
-
-const {curentPage} = useHashRoute();
-console.log(curentPage.value);
-const router = [
-  {name : 'home', component : Home},
-  {name : 'temperature', component : Temperature}
-]
+const routes = [
+  {hash : '#home', component : Home},
+  {hash : '#temperature', component : Temperature},
+  {hash : '#messures', component : Messures},
+  {hash : '#schedule', component : Schedule}
+];
+const {currentComponent,
+      currentRoute,
+      navigateTo} = useHashRoute(routes);
+      //objet cassé en 3 variables pour pouvoir les utiliser dans le template
 </script>
 
 <template>
@@ -20,12 +24,15 @@ const router = [
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#temperature">Temperature</a></li>
+        <li><a href="#messures">Messures</a></li>
+        <li><a href="#schedule">Schedule</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <Home v-if="curentPage === 'home'"/>
-   <!-- affiche la page que si la conditione est vraie -->
-    <Temperature v-if="curentPage === 'temperature'"/>
+    <!-- <Home v-if="curentPage === 'home'"/>
+   // affiche la page que si la conditione est vraie,ici le code est redondant
+    <Temperature v-if="curentPage === 'temperature'"/> -->
+    <component :is="currentComponent"/>
   </main>
 </template>
