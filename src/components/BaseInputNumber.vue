@@ -1,25 +1,23 @@
 <script setup>
-import { computed, ref } from 'vue';
-// export function value(number) {
-//    const temp = ref(0);
-//    const kelvin = computed({
-//      get :  () => parseFloat((temp.value).toFixed(2)),
-//      set : (val) => temp.value=  parseFloat(val), 
-//    });
+defineProps({
+  label : String
+})
+const value = defineModel(0); //variable réactive pour stocker la valeur de l'input
 
-// }
 </script>
 
 <template>
- <section id="header">
+   <div>
+ <section >
       <h1>Changement de valeurs</h1>
   </section>
-  <section id="kelvin">
+  <section ">
     
-      <h2>Kelvin</h2>
-      <input v-model="kelvin" type="number" placeholder="Entrez un nombre" />
+      <h2>{{ label }}</h2>
+      <input v-model="value" type="number" placeholder="Entrez un nombre" />
       <!-- v-model lié à une variable -->
       </section> 
+   </div>
 </template>
 
 <style scoped>

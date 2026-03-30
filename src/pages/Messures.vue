@@ -1,5 +1,6 @@
 <script setup> 
 import {computed, ref } from 'vue'; 
+import BaseInputNumber from '../components/BaseInputNumber.vue';
 
 const temp = ref(0); 
 const pouce = computed ({ 
@@ -30,6 +31,8 @@ const mile = computed ({
 </script>
 
 <template>
+   <BaseInputNumber label="Pouce/Inch" v-model="pouce"/>
+   <!-- v-model = valeur réactive dans les deux sens  -->
    <section id="header">
       <h1>Changement de valeurs</h1>
    </section>
