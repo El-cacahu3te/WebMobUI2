@@ -2,7 +2,7 @@
 import Home from './pages/Home.vue'
 import Temperature from './pages/Temperature.vue'
 import Messures from './pages/Messures.vue'
-import Schedule from './pages/Schedule.vue'
+import Schedule from './components/Schedule.vue/index.js'
 import { useHashRoute } from './composables/useHashRoute.js' 
 import { useJsonStorage } from './composables/useJsonStorage.js' 
 

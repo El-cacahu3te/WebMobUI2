@@ -1,8 +1,7 @@
 <script setup>
-//  import { useFetchJson } from '../composables/useFetchJson';
-//  import { computed } from 'vue';
-
-//    const {data: schedule, error, loading} = useFetchJson('https://chabloz.eu/filles/horaires/all'); //hard codé URL pour l'instant
+import { useFetchJson } from '../composables/useFetchJson';
+import { computed } from 'vue';
+    const {data: schedule, error, loading} = useFetchJson('https://chabloz.eu/filles/horaires/all'); //hard codé URL pour l'instant
 //    const filter = defineModel(); //variable réactive pour stocker la valeur du filtre dans inpute et la variable
 //    const scheduleFiltered = computed(() => {
 //     return schedule.filter((c) => c.label.search(filter.value)!== -1);

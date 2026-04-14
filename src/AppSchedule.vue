@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  fetch('https://chabloz.eu/files/horaires/all')
+  // import de schedule et affichage de la vue et header et footer  
 </template>
 
 <style scoped>

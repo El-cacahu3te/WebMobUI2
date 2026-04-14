@@ -11,7 +11,17 @@ const myApp = createApp(App);
 myApp.use(Quasar, {
    config: {
       brand: {
-         // Définissez ici vos couleurs de thème personnalisées
+         primary: '#005c2e',
+         secondary: '#00ff80',
+         accent: '#ff3333',
+
+         dark: '#191919',
+         'dark-page': '#000000',
+
+         positive: '#21BA45',
+         negative: '#C10015',
+         info: '#31CCEC',
+         warning: '#F2C037'
       }
    },
    plugins: {},
