@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  test
+  fetch('https://chabloz.eu/files/horaires/all')
 </template>
 
 <style scoped>
