@@ -1,9 +1,12 @@
 <script setup>
-   
+   import Schedule from './components/Schedule.vue'
+   import TheHeader from './components/TheHeader.vue' 
 </script>
 
 <template>
-  // import de schedule et affichage de la vue et header et footer  
+  <TheHeader />
+  <Schedule />
+  <p>AppSchedule</p>
 </template>
 
 <style scoped>

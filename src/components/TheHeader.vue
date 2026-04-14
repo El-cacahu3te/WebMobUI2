@@ -1,43 +1,39 @@
 <script setup>
 
-import { useJsonStorage } from '../composables/useJsonStorage';
-
-const {val : theme} = useJsonStorage('theme', 'light');
-function switchTheme(){
-  theme.value = theme.value === 'light' ? 'dark' : 'light';
-}
-
-
 </script>
 
 <template>
+  <div class="q-pa-md"></div>
   <q-layout view="hHh lpR fFf">
 
-    <q-header elevated class="bg-primary text-white">
+    <q-header reveal elevated class="bg-primary text-white">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+            <img src="https://horaires.chabloz.eu/logo.png">
           </q-avatar>
-          Title
+          Horaires COMEM 
+          
+          
+         
         </q-toolbar-title>
+        <q-btn  float-left flat color="secondary" icon="bedtime" @click="$q.dark.toggle()" />
       </q-toolbar>
     </q-header>
 
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-
-    <q-footer class="bg-grey-8 text-white">
+    <q-footer  reveal  class="bg-primary text-white">
       <q-toolbar>
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          <div>Horaires COMEM</div>
+        <q-toolbar-title  class="text-body2">
+          <div class="text-center">
+          <q-icon name="copyright" />2026 -By Elia Nicolo
+        </div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>
 
   </q-layout>
 </template>
+
+<style scoped>
+  
+</style>
