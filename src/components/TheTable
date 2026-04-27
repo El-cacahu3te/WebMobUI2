@@ -1,0 +1,55 @@
+<script setup>
+ import {Schedule} from '/Schedule.vue';
+</script>
+
+<template>
+   <table>
+  <tbody>
+    <tr>
+      <th scope="row">Barrage Jinping-I</th>
+      <td>Chine</td>
+      <td>305 m</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <th scope="row">Barrage de Nurek</th>
+      <td>Tadjikistan</td>
+      <td>300 m</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <th scope="row">Barrage de Lianghekou</th>
+      <td>Chine</td>
+      <td>295 m</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <th scope="row">Barrage de Xiowan</th>
+      <td>Chine</td>
+      <td>292 m</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <th scope="row">Barrage de Balhetan</th>
+      <td>Chine</td>
+      <td>289 m</td>
+    </tr>
+    <tr>
+      <td>6.</td>
+      <th scope="row">Barrage de Xiluodu</th>
+      <td>Chine</td>
+      <td>285.5 m</td>
+    </tr>
+    <tr>
+      <td>7.</td>
+      <th scope="row">Barrage de la Grande-Dixence</th>
+      <td>Suisse</td>
+      <td>285 m</td>
+    </tr>
+  </tbody>
+</table>
+</template>
+
+<style scoped>
+  
+</style>
